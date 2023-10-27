@@ -47,15 +47,16 @@ public class UnsortedBag<T> extends ArrayCollection<T> implements BagInterface<T
         return count;
     }
     public void clear(){
-        elements = null;
+        elements = (T[]) new Object[numElements];
+        numElements = 0;
     }
     public String toString(){
         String x = "";
         for(int i = 0; i < numElements; i++){
-            if(elements[i] == null){
-                continue;
+        if(isEmpty()){
+                break;
             }
-            else{
+        else{
             x += elements[i] + " ";
         }
         }
